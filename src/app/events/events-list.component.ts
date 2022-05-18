@@ -1,7 +1,8 @@
+import { IEvent } from './shared/event.model';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from './../common/toastr.service';
 import { Component, OnInit } from "@angular/core";
-import { EventService } from "./event.service";
+import { EventService } from "./shared/event.service";
 
 @Component({
   template: `
@@ -18,7 +19,7 @@ import { EventService } from "./event.service";
   `
 })
 export class EventsListComponent implements OnInit{
-  events!:any
+  events!:IEvent[]
   constructor(private eventService:EventService, private toastrService:ToastrService, private route:ActivatedRoute ){}
   handleEvent(data:Event){
     console.log(`recieved:`+ data);
