@@ -6,7 +6,7 @@ import { EventService } from "./event.service";
 export class EventListReslover implements Resolve<any>{
   constructor (private eventService:EventService){}
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    this.eventService.getEvents()
+    return this.eventService.getEvents()
   }
 
 }
