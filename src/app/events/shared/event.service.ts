@@ -15,6 +15,16 @@ export class EventService{
   getEvent(id:number):IEvent|undefined{
     return events.find((event)=>event.id===id);
   }
+  saveEvent(event:IEvent){
+    event.id= (Math.floor(Math.random()*100));
+    event.sessions=[];
+    events.push(event);
+  }
+
+  updateEvent(event:IEvent){
+    const eventIndex= events.findIndex((e)=>e.id== event.id)
+    events[eventIndex]= event;
+  }
 }
 
 const events:IEvent[] = [

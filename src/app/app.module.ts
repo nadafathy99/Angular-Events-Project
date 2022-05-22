@@ -1,3 +1,6 @@
+import { SessionListComponent } from './events/event-details/session-list.component';
+import { CreateSessionComponent } from './events/event-details/create-session.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { appRoutes } from './routes';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -19,10 +22,14 @@ import { Error404Component } from './error/404.component';
     EventThumbnailComponent,
     EventDetailsComponent,
     CreateEventComponent,
-    Error404Component
+    Error404Component,
+    CreateSessionComponent,
+    SessionListComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [

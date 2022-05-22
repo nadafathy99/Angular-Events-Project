@@ -16,10 +16,8 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 
     <div> \$ {{event?.price}}</div>
     <div *ngIf="event?.location">
-      <span>Location: {{event?.location?.address}}</span>
-      <span class="pad-left">{{event?.location?.city}}, {{event?.location?.country}}</span>
+      <span>Location: {{event?.location?.address}}, {{event?.location?.city}}, {{event?.location?.country}}</span>
     </div>
-    <button class="btn btn-primary" (click)="haldleClickMe()">Click Me!</button>
   </div>
   `,
   styles:[`
@@ -33,9 +31,7 @@ export class EventThumbnailComponent{
 @Input() event !:IEvent
 @Output() eventClick = new EventEmitter()
 datafromChild = 'from child'
-haldleClickMe(){
-  this.eventClick.emit(' Hello from child '+this.event.name)
-}
+
 getStartTimeClass(){
   // const isEarlyStart = this.event?.time == '8:00 am'
   // return {green:isEarlyStart, bold: isEarlyStart}

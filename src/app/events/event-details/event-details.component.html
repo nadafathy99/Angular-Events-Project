@@ -22,3 +22,15 @@
     </div>
   </div>
 </div>
+<hr>
+<div class="row container">
+  <div class="col-xs-2">
+    <button class="btn btn-primary" (click)="viewSessions()" style="margin:0">Sessions</button>
+  </div>
+
+  <div class="col-xs-2">
+    <button class="btn btn-primary" (click)="addSession()">Add Session</button>
+  </div>
+</div>
+<create-session (newSession)="saveSession($event)" (cancelAddSession)="viewSessions()" *ngIf="addMode"></create-session>
+<session-list *ngIf="!addMode" [sessions]="event?.sessions"></session-list>
