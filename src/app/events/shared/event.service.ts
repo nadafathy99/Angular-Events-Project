@@ -23,7 +23,7 @@ export class EventService{
 
   updateEvent(event:IEvent){
     const eventIndex= events.findIndex((e)=>e.id== event.id)
-    events[eventIndex]= event;
+    events[eventIndex]= event
   }
 }
 

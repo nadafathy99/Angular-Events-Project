@@ -1,11 +1,20 @@
-<div class="row container" *ngFor="let session of sessions">
-  <div class="col-md-10">
-    <div class="well">
-        <h4>{{session.name}}</h4>
+<div *ngIf="filteredSessions?.length===0" class="col-md-10" style="margin-top: 40px; font-weight:800; text-align:center">
+  There're no sessions for this level.
+</div>
+
+<div class="row container" *ngFor="let session of filteredSessions">
+  <div *ngIf="filteredSessions" class="col-md-11">
+    <collapsible>
+      <div title>
+        {{session.name}}
+        <i *ngIf="session.voters.length > 3" class="glyphicon glyphicon-fire" style="color:red"></i>
+      </div>
+      <div body>
         <h6>{{session.presenter}}</h6>
-        <span>Duration: {{session.duration}}</span><br />
+        <span>Duration: {{session.duration | duration}}</span><br />
         <span>Level: {{session.level}}</span>
         <p>{{session.abstract}}</p>
-    </div>
+      </div>
+    </collapsible>
   </div>
 </div>
